@@ -18,9 +18,9 @@ public class User {
         this.name = name;
         this.id = UUID.randomUUID();
     }
-    public User(String name, UUID uuid){
+    public User(String name, UUID id){
         this.name = name;
-        this.id = uuid;
+        this.id = id;
     }
 
     public String getName() {
@@ -31,7 +31,7 @@ public class User {
         this.name = name;
     }
 
-    public UUID geId() {
+    public UUID getId() {
         return id;
     }
 }

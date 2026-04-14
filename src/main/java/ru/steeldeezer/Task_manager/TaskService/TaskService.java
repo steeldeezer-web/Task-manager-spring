@@ -6,6 +6,8 @@ import ru.steeldeezer.Task_manager.model.Task;
 import ru.steeldeezer.Task_manager.model.User;
 import ru.steeldeezer.Task_manager.repository.TaskRepository;
 import ru.steeldeezer.Task_manager.repository.UserRepository;
+
+import java.util.List;
 import java.util.UUID;
 @Service
 public class TaskService {
@@ -30,6 +32,12 @@ public class TaskService {
                 .orElseThrow(() ->new UserNotFoundException("Пользователь с ID " + userId + " не найден"));
         Task task = new Task(user, title, description);
         return taskRepository.save(task);
+    }
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
+    }
+    public List<Task> getAllTasks(){
+        return taskRepository.findAll();
     }
 
 }
